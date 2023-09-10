@@ -8,7 +8,7 @@ class Garage {
 				}
 
 				public void setHoehe(float hoehe) {
-								if (hoehe < 1.5f || hoehe > 3.0f || hoehe = null) {
+								if (hoehe < 1.5f || hoehe > 3.0f) {
 												System.out.println("Höhe nicht im gültigen bereich, auf standard gesetzt");
 												hoehe = 2.1f;
 								}
@@ -16,12 +16,17 @@ class Garage {
 								this.hoehe = hoehe;
 				}
 
-				public float setHoehe() {
+				public float getHoehe() {
 								return this.hoehe;
 				}
 
 				public void printGarage() {
-								System.out.println(this.parkedVehicle.getKennzeichen());
+					if (this.parkedVehicle == null) {
+						System.out.println("Kein Fahrzeug in der Garage");
+					}
+					else {
+						System.out.println(this.parkedVehicle.getKennzeichen());
+					}
 				}
 
 				public void einparken(Fahrzeug vehicleToPark) {
@@ -34,13 +39,15 @@ class Garage {
 				}
 
 				public String ausparken() {
+								String tempKennzeichen = " ";
 								if (this.parkedVehicle == null) {
 												System.out.println("Kein Fahrzeug in der Garage");
 												return null;
 								}
 								else {
+												tempKennzeichen = this.parkedVehicle.getKennzeichen();
 												this.parkedVehicle = null;
-												return this.parkedVehicle.getKennzeichen();
 								}
+								return tempKennzeichen;
 				}
 }

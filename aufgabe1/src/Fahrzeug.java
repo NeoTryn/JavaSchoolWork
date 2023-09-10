@@ -18,7 +18,7 @@ class Fahrzeug {
 								this.kennzeichen = kennzeichen;
 
 								if (this.kennzeichen != null) {
-												if (!(this.kennzeichen.length <= 5) || !(this.kennzeichen.length >= 8)){
+												if (this.kennzeichen.length() < 5 || this.kennzeichen.length() > 8){
 																kennzeichen = null;
 																System.out.println("Kennzeichenlänge nicht im erlaubten bereich, auf null gesetzt");
 												}
@@ -30,12 +30,14 @@ class Fahrzeug {
 				}
 
 				public void setHoehe(float hoehe) {
-								if (hoehe > 4.0f || hoehe < 1.6f || hoehe == null) {
+								if (hoehe > 4.0f || hoehe < 1.6f) {
 												hoehe = 1.6f;
-												System.out.println("Hoehe nicht im erlaubten bereich, auf standard gesetzt")
+												System.out.println("Hoehe nicht im erlaubten bereich, auf standard gesetzt");
 								}
 								this.hoehe = hoehe;
 				}
 
-
+				public float getHoehe() {
+					return this.hoehe;
+				}
 }
