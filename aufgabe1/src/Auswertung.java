@@ -23,7 +23,7 @@ class Auswertung {
 
 								alter = new int[groesse];
 				}
-
+				
 				public Auswertung(int groesse, int anzahl) {
 								scanner = new Scanner(System.in);
 								random = new Random();
@@ -101,13 +101,19 @@ class Auswertung {
 								if (arrayFull) {
 												tempPos--;
 								}
-								if (alter[pos1] > tempPos || alter[pos2] > tempPos) {
-												System.err.println("Ungültige Positionswerte");
+								if (pos1 >= alter.length || pos2 > alter.length) {
+												System.err.println("Positonen größer als array länge");
 								}
 								else {
-												int temp = alter[pos1];
-												alter[pos1] = alter[pos2];
-												alter[pos2] = temp;
+												if (alter[pos1] > tempPos || alter[pos2] > tempPos) {
+																System.err.println("Ungültige Positionswerte");
+												}
+												else {
+																int temp = alter[pos1];
+																alter[pos1] = alter[pos2];
+																alter[pos2] = temp;
+												}
+								
 								}
 				}
 
