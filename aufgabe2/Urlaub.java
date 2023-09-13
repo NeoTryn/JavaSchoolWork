@@ -24,10 +24,6 @@ class Urlaub {
 								
 								int month = 0;
 
-								for (String str : splits) {
-												System.out.println(str);
-								}
-
 								try {
 												month = Integer.parseInt(splits[1]);
 								}
@@ -64,42 +60,7 @@ class Urlaub {
 								else {
 												String[] splits = ab.split("/");
 												if (isNumeric(splits[0]) && isNumeric(splits[1]) && isNumeric(splits[2])) {
-																/* Unnecessary logic that knon doesn't need
-																if (splits[1] <= ""12) {
-																				if (splits[1] % 2 == 0) {
-																								if (splits[1] == 2) {
-																												if (splits[0] == 28) {
-																																this.ab = ab;
-																												}
-																								}
-																								else if (splits[1] == 2 && splits[2] % 4 == 0) {
-																												if (splits[0] == 29) {
-																																this.ab = ab;
-																												}
-																												else {
-																																System.err.println("Days are not equal to 29 in a leap year");
-																												}
-																								}
-																								else {
-																												if (splits[0] <= 30) {
-																																this.ab = ab;
-																												}
-																												else {
-																																System.err.println("Days are not equal to 30 in even month");
-																												}
-																								}
-																				}
-																				else {
-																								if (splits[0] <= 31) {
-																												this.ab = ab;
-																								}
-																								else {
-																												System.err.println("Days are not equal to 31 in ");
-																								}
-																				}
-																}*/
 																this.ab = ab;
-
 												}
 								}
 				}
@@ -124,7 +85,7 @@ class Urlaub {
 								return stammgast;
 				}
 
-				public static boolean isNumeric(String strNum) {
+				private static boolean isNumeric(String strNum) {
 								if (strNum == null) {
 												return false;
 								}
